@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "properties": {
+        "eventId": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "AdditionalNames",
+                "Artists",
+                "Description",
+                "Discs",
+                "Identifiers",
+                "MainPicture",
+                "Names",
+                "PVs",
+                "ReleaseEvent",
+                "Tags",
+                "Tracks",
+                "WebLinks"
+            ]
+        },
+        "lang": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Default",
+                "Japanese",
+                "Romaji",
+                "English"
+            ]
+        }
+    }
+}

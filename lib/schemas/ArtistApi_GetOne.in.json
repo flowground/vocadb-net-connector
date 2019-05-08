@@ -1,0 +1,49 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "AdditionalNames",
+                "ArtistLinks",
+                "ArtistLinksReverse",
+                "BaseVoicebank",
+                "Description",
+                "MainPicture",
+                "Names",
+                "Tags",
+                "WebLinks"
+            ]
+        },
+        "relations": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "LatestAlbums",
+                "LatestEvents",
+                "LatestSongs",
+                "PopularAlbums",
+                "PopularSongs",
+                "All"
+            ]
+        },
+        "lang": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Default",
+                "Japanese",
+                "Romaji",
+                "English"
+            ]
+        }
+    }
+}

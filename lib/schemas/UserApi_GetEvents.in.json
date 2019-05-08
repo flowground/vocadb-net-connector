@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "relationshipType": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "Interested",
+                "Attending"
+            ]
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "type": "object",
+    "properties": {
+        "author": {
+            "required": false,
+            "type": "string"
+        },
+        "maxResults": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "getTotalCount": {
+            "required": false,
+            "type": "boolean"
+        },
+        "lang": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Default",
+                "Japanese",
+                "Romaji",
+                "English"
+            ]
+        }
+    }
+}

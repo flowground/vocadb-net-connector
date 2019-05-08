@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+        "languagePreference": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Default",
+                "Japanese",
+                "Romaji",
+                "English"
+            ]
+        },
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "AdditionalNames",
+                "Albums",
+                "Artists",
+                "Lyrics",
+                "MainPicture",
+                "Names",
+                "PVs",
+                "ReleaseEvent",
+                "Tags",
+                "ThumbUrl",
+                "WebLinks"
+            ]
+        }
+    }
+}

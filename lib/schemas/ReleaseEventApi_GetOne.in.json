@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "AdditionalNames",
+                "Artists",
+                "Description",
+                "MainPicture",
+                "Names",
+                "Series",
+                "SongList",
+                "WebLinks"
+            ]
+        },
+        "lang": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Default",
+                "Japanese",
+                "Romaji",
+                "English"
+            ]
+        }
+    }
+}

@@ -1,0 +1,215 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "requestBody": {
+            "properties": {
+                "body": {
+                    "type": "string"
+                },
+                "createdFormatted": {
+                    "type": "string"
+                },
+                "highPriority": {
+                    "type": "boolean"
+                },
+                "id": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "inbox": {
+                    "enum": [
+                        "Nothing",
+                        "Received",
+                        "Sent",
+                        "Notifications"
+                    ],
+                    "type": "string"
+                },
+                "read": {
+                    "type": "boolean"
+                },
+                "receiver": {
+                    "properties": {
+                        "active": {
+                            "type": "boolean"
+                        },
+                        "groupId": {
+                            "enum": [
+                                "Nothing",
+                                "Limited",
+                                "Regular",
+                                "Trusted",
+                                "Moderator",
+                                "Admin"
+                            ],
+                            "type": "string"
+                        },
+                        "id": {
+                            "format": "int32",
+                            "type": "integer"
+                        },
+                        "knownLanguages": {
+                            "items": {
+                                "properties": {
+                                    "cultureCode": {
+                                        "type": "string"
+                                    },
+                                    "proficiency": {
+                                        "enum": [
+                                            "Nothing",
+                                            "Basics",
+                                            "Intermediate",
+                                            "Advanced",
+                                            "Native"
+                                        ],
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "mainPicture": {
+                            "properties": {
+                                "mime": {
+                                    "type": "string"
+                                },
+                                "urlSmallThumb": {
+                                    "type": "string"
+                                },
+                                "urlThumb": {
+                                    "type": "string"
+                                },
+                                "urlTinyThumb": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "memberSince": {
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "oldUsernames": {
+                            "items": {
+                                "properties": {
+                                    "date": {
+                                        "format": "date-time",
+                                        "type": "string"
+                                    },
+                                    "oldName": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "verifiedArtist": {
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                },
+                "sender": {
+                    "properties": {
+                        "active": {
+                            "type": "boolean"
+                        },
+                        "groupId": {
+                            "enum": [
+                                "Nothing",
+                                "Limited",
+                                "Regular",
+                                "Trusted",
+                                "Moderator",
+                                "Admin"
+                            ],
+                            "type": "string"
+                        },
+                        "id": {
+                            "format": "int32",
+                            "type": "integer"
+                        },
+                        "knownLanguages": {
+                            "items": {
+                                "properties": {
+                                    "cultureCode": {
+                                        "type": "string"
+                                    },
+                                    "proficiency": {
+                                        "enum": [
+                                            "Nothing",
+                                            "Basics",
+                                            "Intermediate",
+                                            "Advanced",
+                                            "Native"
+                                        ],
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "mainPicture": {
+                            "properties": {
+                                "mime": {
+                                    "type": "string"
+                                },
+                                "urlSmallThumb": {
+                                    "type": "string"
+                                },
+                                "urlThumb": {
+                                    "type": "string"
+                                },
+                                "urlTinyThumb": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "memberSince": {
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "oldUsernames": {
+                            "items": {
+                                "properties": {
+                                    "date": {
+                                        "format": "date-time",
+                                        "type": "string"
+                                    },
+                                    "oldName": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "verifiedArtist": {
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                },
+                "subject": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

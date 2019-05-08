@@ -1,0 +1,67 @@
+{
+    "type": "object",
+    "properties": {
+        "durationHours": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "startDate": {
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+        },
+        "filterBy": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "CreateDate",
+                "PublishDate",
+                "Popularity"
+            ]
+        },
+        "vocalist": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Nothing",
+                "Vocaloid",
+                "UTAU",
+                "CeVIO"
+            ]
+        },
+        "maxResults": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "AdditionalNames",
+                "Albums",
+                "Artists",
+                "Lyrics",
+                "MainPicture",
+                "Names",
+                "PVs",
+                "ReleaseEvent",
+                "Tags",
+                "ThumbUrl",
+                "WebLinks"
+            ]
+        },
+        "languagePreference": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Default",
+                "Japanese",
+                "Romaji",
+                "English"
+            ]
+        }
+    }
+}

@@ -1,0 +1,114 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "lastTopicAuthor": {
+                    "properties": {
+                        "active": {
+                            "type": "boolean"
+                        },
+                        "groupId": {
+                            "enum": [
+                                "Nothing",
+                                "Limited",
+                                "Regular",
+                                "Trusted",
+                                "Moderator",
+                                "Admin"
+                            ],
+                            "type": "string"
+                        },
+                        "id": {
+                            "format": "int32",
+                            "type": "integer"
+                        },
+                        "knownLanguages": {
+                            "items": {
+                                "properties": {
+                                    "cultureCode": {
+                                        "type": "string"
+                                    },
+                                    "proficiency": {
+                                        "enum": [
+                                            "Nothing",
+                                            "Basics",
+                                            "Intermediate",
+                                            "Advanced",
+                                            "Native"
+                                        ],
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "mainPicture": {
+                            "properties": {
+                                "mime": {
+                                    "type": "string"
+                                },
+                                "urlSmallThumb": {
+                                    "type": "string"
+                                },
+                                "urlThumb": {
+                                    "type": "string"
+                                },
+                                "urlTinyThumb": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "memberSince": {
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "oldUsernames": {
+                            "items": {
+                                "properties": {
+                                    "date": {
+                                        "format": "date-time",
+                                        "type": "string"
+                                    },
+                                    "oldName": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "verifiedArtist": {
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                },
+                "lastTopicDate": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "topicCount": {
+                    "format": "int32",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

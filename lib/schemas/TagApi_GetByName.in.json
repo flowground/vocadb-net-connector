@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "name": {
+            "required": true,
+            "type": "string"
+        },
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "AdditionalNames",
+                "AliasedTo",
+                "Description",
+                "MainPicture",
+                "Names",
+                "Parent",
+                "RelatedTags",
+                "TranslatedDescription",
+                "WebLinks"
+            ]
+        },
+        "lang": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Default",
+                "Japanese",
+                "Romaji",
+                "English"
+            ]
+        }
+    }
+}

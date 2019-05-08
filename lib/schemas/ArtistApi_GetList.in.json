@@ -1,0 +1,125 @@
+{
+    "type": "object",
+    "properties": {
+        "query": {
+            "required": false,
+            "type": "string"
+        },
+        "artistTypes": {
+            "required": false,
+            "type": "string"
+        },
+        "allowBaseVoicebanks": {
+            "required": false,
+            "type": "boolean"
+        },
+        "tagName": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "tagId": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "format": "int32",
+                "type": "integer"
+            }
+        },
+        "childTags": {
+            "required": false,
+            "type": "boolean"
+        },
+        "followedByUserId": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "status": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Draft",
+                "Finished",
+                "Approved",
+                "Locked"
+            ]
+        },
+        "advancedFilters": {
+            "required": false,
+            "type": "array",
+            "items": {}
+        },
+        "start": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "maxResults": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "getTotalCount": {
+            "required": false,
+            "type": "boolean"
+        },
+        "sort": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "Name",
+                "AdditionDate",
+                "AdditionDateAsc",
+                "ReleaseDate",
+                "SongCount",
+                "SongRating",
+                "FollowerCount"
+            ]
+        },
+        "preferAccurateMatches": {
+            "required": false,
+            "type": "boolean"
+        },
+        "nameMatchMode": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Auto",
+                "Partial",
+                "StartsWith",
+                "Exact",
+                "Words"
+            ]
+        },
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "AdditionalNames",
+                "ArtistLinks",
+                "ArtistLinksReverse",
+                "BaseVoicebank",
+                "Description",
+                "MainPicture",
+                "Names",
+                "Tags",
+                "WebLinks"
+            ]
+        },
+        "lang": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Default",
+                "Japanese",
+                "Romaji",
+                "English"
+            ]
+        }
+    }
+}

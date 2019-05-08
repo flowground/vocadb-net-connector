@@ -1,0 +1,157 @@
+{
+    "type": "object",
+    "properties": {
+        "entryType": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "Undefined",
+                "Album",
+                "Artist",
+                "DiscussionTopic",
+                "PV",
+                "ReleaseEvent",
+                "ReleaseEventSeries",
+                "Song",
+                "SongList",
+                "Tag",
+                "User"
+            ]
+        },
+        "commentId": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "requestBody": {
+            "properties": {
+                "author": {
+                    "properties": {
+                        "active": {
+                            "type": "boolean"
+                        },
+                        "groupId": {
+                            "enum": [
+                                "Nothing",
+                                "Limited",
+                                "Regular",
+                                "Trusted",
+                                "Moderator",
+                                "Admin"
+                            ],
+                            "type": "string"
+                        },
+                        "id": {
+                            "format": "int32",
+                            "type": "integer"
+                        },
+                        "knownLanguages": {
+                            "items": {
+                                "properties": {
+                                    "cultureCode": {
+                                        "type": "string"
+                                    },
+                                    "proficiency": {
+                                        "enum": [
+                                            "Nothing",
+                                            "Basics",
+                                            "Intermediate",
+                                            "Advanced",
+                                            "Native"
+                                        ],
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "mainPicture": {
+                            "properties": {
+                                "mime": {
+                                    "type": "string"
+                                },
+                                "urlSmallThumb": {
+                                    "type": "string"
+                                },
+                                "urlThumb": {
+                                    "type": "string"
+                                },
+                                "urlTinyThumb": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "memberSince": {
+                            "format": "date-time",
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "oldUsernames": {
+                            "items": {
+                                "properties": {
+                                    "date": {
+                                        "format": "date-time",
+                                        "type": "string"
+                                    },
+                                    "oldName": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "type": "array"
+                        },
+                        "verifiedArtist": {
+                            "type": "boolean"
+                        }
+                    },
+                    "type": "object"
+                },
+                "authorName": {
+                    "type": "string"
+                },
+                "created": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "entry": {
+                    "properties": {
+                        "entryType": {
+                            "enum": [
+                                "Undefined",
+                                "Album",
+                                "Artist",
+                                "DiscussionTopic",
+                                "PV",
+                                "ReleaseEvent",
+                                "ReleaseEventSeries",
+                                "Song",
+                                "SongList",
+                                "Tag",
+                                "User"
+                            ],
+                            "type": "string"
+                        },
+                        "id": {
+                            "format": "int32",
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
+                },
+                "id": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "message": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

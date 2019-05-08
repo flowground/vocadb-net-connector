@@ -1,0 +1,124 @@
+{
+    "type": "object",
+    "properties": {
+        "listId": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "query": {
+            "required": false,
+            "type": "string"
+        },
+        "songTypes": {
+            "required": false,
+            "type": "string"
+        },
+        "pvServices": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Nothing",
+                "NicoNicoDouga",
+                "Youtube",
+                "SoundCloud",
+                "Vimeo",
+                "Piapro",
+                "Bilibili",
+                "File",
+                "LocalFile",
+                "Creofuga"
+            ]
+        },
+        "tagId": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "format": "int32",
+                "type": "integer"
+            }
+        },
+        "artistId": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "format": "int32",
+                "type": "integer"
+            }
+        },
+        "childVoicebanks": {
+            "required": false,
+            "type": "boolean"
+        },
+        "advancedFilters": {
+            "required": false,
+            "type": "array",
+            "items": {}
+        },
+        "start": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "maxResults": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "getTotalCount": {
+            "required": false,
+            "type": "boolean"
+        },
+        "sort": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "Name",
+                "AdditionDate",
+                "PublishDate",
+                "FavoritedTimes",
+                "RatingScore"
+            ]
+        },
+        "nameMatchMode": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Auto",
+                "Partial",
+                "StartsWith",
+                "Exact",
+                "Words"
+            ]
+        },
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "AdditionalNames",
+                "Albums",
+                "Artists",
+                "Lyrics",
+                "MainPicture",
+                "Names",
+                "PVs",
+                "ReleaseEvent",
+                "Tags",
+                "ThumbUrl",
+                "WebLinks"
+            ]
+        },
+        "lang": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Default",
+                "Japanese",
+                "Romaji",
+                "English"
+            ]
+        }
+    }
+}

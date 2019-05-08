@@ -1,0 +1,87 @@
+{
+    "type": "object",
+    "properties": {
+        "query": {
+            "required": false,
+            "type": "string"
+        },
+        "groups": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Nothing",
+                "Limited",
+                "Regular",
+                "Trusted",
+                "Moderator",
+                "Admin"
+            ]
+        },
+        "joinDateAfter": {
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+        },
+        "joinDateBefore": {
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+        },
+        "nameMatchMode": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Auto",
+                "Partial",
+                "StartsWith",
+                "Exact",
+                "Words"
+            ]
+        },
+        "start": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "maxResults": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "getTotalCount": {
+            "required": false,
+            "type": "boolean"
+        },
+        "sort": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "RegisterDate",
+                "Name",
+                "Group"
+            ]
+        },
+        "includeDisabled": {
+            "required": false,
+            "type": "boolean"
+        },
+        "onlyVerified": {
+            "required": false,
+            "type": "boolean"
+        },
+        "knowsLanguage": {
+            "required": false,
+            "type": "string"
+        },
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "KnownLanguages",
+                "MainPicture",
+                "OldUsernames"
+            ]
+        }
+    }
+}

@@ -1,0 +1,136 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "query": {
+            "required": false,
+            "type": "string"
+        },
+        "tagId": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "tag": {
+            "required": false,
+            "type": "string"
+        },
+        "artistId": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "purchaseStatuses": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Nothing",
+                "Wishlisted",
+                "Ordered",
+                "Owned",
+                "All"
+            ]
+        },
+        "releaseEventId": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "albumTypes": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Unknown",
+                "Album",
+                "Single",
+                "EP",
+                "SplitAlbum",
+                "Compilation",
+                "Video",
+                "Artbook",
+                "Game",
+                "Fanmade",
+                "Instrumental",
+                "Other"
+            ]
+        },
+        "advancedFilters": {
+            "required": false,
+            "type": "array",
+            "items": {}
+        },
+        "start": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "maxResults": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "getTotalCount": {
+            "required": false,
+            "type": "boolean"
+        },
+        "sort": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "Name",
+                "ReleaseDate",
+                "ReleaseDateWithNulls",
+                "AdditionDate",
+                "RatingAverage",
+                "RatingTotal",
+                "NameThenReleaseDate",
+                "CollectionCount"
+            ]
+        },
+        "nameMatchMode": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Auto",
+                "Partial",
+                "StartsWith",
+                "Exact",
+                "Words"
+            ]
+        },
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "AdditionalNames",
+                "Artists",
+                "Description",
+                "Discs",
+                "Identifiers",
+                "MainPicture",
+                "Names",
+                "PVs",
+                "ReleaseEvent",
+                "Tags",
+                "Tracks",
+                "WebLinks"
+            ]
+        },
+        "lang": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Default",
+                "Japanese",
+                "Romaji",
+                "English"
+            ]
+        }
+    }
+}

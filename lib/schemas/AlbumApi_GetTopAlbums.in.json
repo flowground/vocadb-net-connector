@@ -1,0 +1,41 @@
+{
+    "type": "object",
+    "properties": {
+        "languagePreference": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Default",
+                "Japanese",
+                "Romaji",
+                "English"
+            ]
+        },
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "AdditionalNames",
+                "Artists",
+                "Description",
+                "Discs",
+                "Identifiers",
+                "MainPicture",
+                "Names",
+                "PVs",
+                "ReleaseEvent",
+                "Tags",
+                "Tracks",
+                "WebLinks"
+            ]
+        },
+        "requestBody": {
+            "items": {
+                "format": "int32",
+                "type": "integer"
+            },
+            "type": "array"
+        }
+    }
+}

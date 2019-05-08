@@ -1,0 +1,55 @@
+{
+    "type": "object",
+    "properties": {
+        "query": {
+            "required": false,
+            "type": "string"
+        },
+        "nameMatchMode": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Auto",
+                "Partial",
+                "StartsWith",
+                "Exact",
+                "Words"
+            ]
+        },
+        "featuredCategory": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Nothing",
+                "Concerts",
+                "VocaloidRanking",
+                "Pools",
+                "Other"
+            ]
+        },
+        "start": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "maxResults": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "getTotalCount": {
+            "required": false,
+            "type": "boolean"
+        },
+        "sort": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "Name",
+                "Date",
+                "CreateDate"
+            ]
+        }
+    }
+}

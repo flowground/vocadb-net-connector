@@ -1,0 +1,2272 @@
+{
+    "title": "VocaDB",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/vocadb.net/v1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://vocadb.net/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "ActivityEntryApi_GetList": {
+            "main": "./lib/actions/ActivityEntryApi_GetList.js",
+            "title": "Gets a list of recent activity entries.",
+            "description": "Entries are always returned sorted from newest to oldest.\r\n            Activity for deleted entries is not returned.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ActivityEntryApi_GetList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AlbumApi_GetList": {
+            "main": "./lib/actions/AlbumApi_GetList.js",
+            "title": "Gets a page of albums.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AlbumApi_GetList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AlbumApi_DeleteComment": {
+            "main": "./lib/actions/AlbumApi_DeleteComment.js",
+            "title": "Deletes a comment.",
+            "description": "Normal users can delete their own comments, moderators can delete all comments.\r\n            Requires login.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AlbumApi_DeleteComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AlbumApi_PostEditComment": {
+            "main": "./lib/actions/AlbumApi_PostEditComment.js",
+            "title": "Updates a comment.",
+            "description": "Normal users can edit their own comments, moderators can edit all comments.\r\n            Requires login.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AlbumApi_PostEditComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AlbumApi_GetNames": {
+            "main": "./lib/actions/AlbumApi_GetNames.js",
+            "title": "Gets a list of album names. Ideal for autocomplete boxes.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AlbumApi_GetNames.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AlbumApi_GetNewAlbums": {
+            "main": "./lib/actions/AlbumApi_GetNewAlbums.js",
+            "title": "Gets list of upcoming or recent albums, same as front page.",
+            "description": "Output is cached for 1 hour.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AlbumApi_GetNewAlbums.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AlbumApi_GetTopAlbums": {
+            "main": "./lib/actions/AlbumApi_GetTopAlbums.js",
+            "title": "Gets list of top rated albums, same as front page.",
+            "description": "Output is cached for 1 hour.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AlbumApi_GetTopAlbums.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AlbumApi_Delete": {
+            "main": "./lib/actions/AlbumApi_Delete.js",
+            "title": "Deletes an album.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AlbumApi_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AlbumApi_GetOne": {
+            "main": "./lib/actions/AlbumApi_GetOne.js",
+            "title": "Gets an album by Id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AlbumApi_GetOne.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AlbumApi_GetComments": {
+            "main": "./lib/actions/AlbumApi_GetComments.js",
+            "title": "Gets a list of comments for an album.",
+            "description": "Pagination and sorting might be added later.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AlbumApi_GetComments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AlbumApi_PostNewComment": {
+            "main": "./lib/actions/AlbumApi_PostNewComment.js",
+            "title": "Posts a new comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AlbumApi_PostNewComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AlbumApi_GetReviews": {
+            "main": "./lib/actions/AlbumApi_GetReviews.js",
+            "title": "AlbumApi_GetReviews",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AlbumApi_GetReviews.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AlbumApi_PostReview": {
+            "main": "./lib/actions/AlbumApi_PostReview.js",
+            "title": "AlbumApi_PostReview",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AlbumApi_PostReview.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AlbumApi_DeleteReview": {
+            "main": "./lib/actions/AlbumApi_DeleteReview.js",
+            "title": "AlbumApi_DeleteReview",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AlbumApi_DeleteReview.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AlbumApi_GetTracks": {
+            "main": "./lib/actions/AlbumApi_GetTracks.js",
+            "title": "Gets tracks for an album.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AlbumApi_GetTracks.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AlbumApi_GetTracksFormatted": {
+            "main": "./lib/actions/AlbumApi_GetTracksFormatted.js",
+            "title": "Gets tracks for an album formatted using the CSV format string.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AlbumApi_GetTracksFormatted.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AlbumApi_GetUserCollections": {
+            "main": "./lib/actions/AlbumApi_GetUserCollections.js",
+            "title": "AlbumApi_GetUserCollections",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AlbumApi_GetUserCollections.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ArtistApi_GetList": {
+            "main": "./lib/actions/ArtistApi_GetList.js",
+            "title": "Find artists.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ArtistApi_GetList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ArtistApi_DeleteComment": {
+            "main": "./lib/actions/ArtistApi_DeleteComment.js",
+            "title": "Deletes a comment.",
+            "description": "Normal users can delete their own comments, moderators can delete all comments.\r\n            Requires login.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ArtistApi_DeleteComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ArtistApi_PostEditComment": {
+            "main": "./lib/actions/ArtistApi_PostEditComment.js",
+            "title": "Updates a comment.",
+            "description": "Normal users can edit their own comments, moderators can edit all comments.\r\n            Requires login.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ArtistApi_PostEditComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ArtistApi_GetNames": {
+            "main": "./lib/actions/ArtistApi_GetNames.js",
+            "title": "Gets a list of artist names. Ideal for autocomplete boxes.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ArtistApi_GetNames.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ArtistApi_Delete": {
+            "main": "./lib/actions/ArtistApi_Delete.js",
+            "title": "Deletes an artist.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ArtistApi_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ArtistApi_GetOne": {
+            "main": "./lib/actions/ArtistApi_GetOne.js",
+            "title": "Gets an artist by Id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ArtistApi_GetOne.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ArtistApi_GetComments": {
+            "main": "./lib/actions/ArtistApi_GetComments.js",
+            "title": "Gets a list of comments for an artist.",
+            "description": "Pagination and sorting might be added later.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ArtistApi_GetComments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ArtistApi_PostNewComment": {
+            "main": "./lib/actions/ArtistApi_PostNewComment.js",
+            "title": "Posts a new comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ArtistApi_PostNewComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CommentApi_GetComments": {
+            "main": "./lib/actions/CommentApi_GetComments.js",
+            "title": "Gets a list of comments for an entry.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CommentApi_GetComments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CommentApi_PostNewComment": {
+            "main": "./lib/actions/CommentApi_PostNewComment.js",
+            "title": "Posts a new comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CommentApi_PostNewComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CommentApi_DeleteComment": {
+            "main": "./lib/actions/CommentApi_DeleteComment.js",
+            "title": "Deletes a comment.",
+            "description": "Normal users can delete their own comments, moderators can delete all comments.\r\n            Requires login.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CommentApi_DeleteComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CommentApi_PostEditComment": {
+            "main": "./lib/actions/CommentApi_PostEditComment.js",
+            "title": "Updates a comment.",
+            "description": "Normal users can edit their own comments, moderators can edit all comments.\r\n            Requires login.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CommentApi_PostEditComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DiscussionApi_DeleteComment": {
+            "main": "./lib/actions/DiscussionApi_DeleteComment.js",
+            "title": "DiscussionApi_DeleteComment",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DiscussionApi_DeleteComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DiscussionApi_PostEditComment": {
+            "main": "./lib/actions/DiscussionApi_PostEditComment.js",
+            "title": "DiscussionApi_PostEditComment",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DiscussionApi_PostEditComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DiscussionApi_GetFolders": {
+            "main": "./lib/actions/DiscussionApi_GetFolders.js",
+            "title": "DiscussionApi_GetFolders",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DiscussionApi_GetFolders.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DiscussionApi_PostNewFolder": {
+            "main": "./lib/actions/DiscussionApi_PostNewFolder.js",
+            "title": "DiscussionApi_PostNewFolder",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DiscussionApi_PostNewFolder.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DiscussionApi_GetTopicsForFolder": {
+            "main": "./lib/actions/DiscussionApi_GetTopicsForFolder.js",
+            "title": "DiscussionApi_GetTopicsForFolder",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DiscussionApi_GetTopicsForFolder.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DiscussionApi_PostNewTopic": {
+            "main": "./lib/actions/DiscussionApi_PostNewTopic.js",
+            "title": "DiscussionApi_PostNewTopic",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DiscussionApi_PostNewTopic.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DiscussionApi_GetTopics": {
+            "main": "./lib/actions/DiscussionApi_GetTopics.js",
+            "title": "DiscussionApi_GetTopics",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DiscussionApi_GetTopics.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DiscussionApi_DeleteTopic": {
+            "main": "./lib/actions/DiscussionApi_DeleteTopic.js",
+            "title": "DiscussionApi_DeleteTopic",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DiscussionApi_DeleteTopic.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DiscussionApi_GetTopic": {
+            "main": "./lib/actions/DiscussionApi_GetTopic.js",
+            "title": "DiscussionApi_GetTopic",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DiscussionApi_GetTopic.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DiscussionApi_PostEditTopic": {
+            "main": "./lib/actions/DiscussionApi_PostEditTopic.js",
+            "title": "DiscussionApi_PostEditTopic",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DiscussionApi_PostEditTopic.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DiscussionApi_PostNewComment": {
+            "main": "./lib/actions/DiscussionApi_PostNewComment.js",
+            "title": "DiscussionApi_PostNewComment",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DiscussionApi_PostNewComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "EntryApi_GetList": {
+            "main": "./lib/actions/EntryApi_GetList.js",
+            "title": "Find entries.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/EntryApi_GetList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "EntryApi_GetNames": {
+            "main": "./lib/actions/EntryApi_GetNames.js",
+            "title": "Gets a list of entry names. Ideal for autocomplete boxes.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/EntryApi_GetNames.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PVApi_GetList": {
+            "main": "./lib/actions/PVApi_GetList.js",
+            "title": "Gets a list of PVs for songs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PVApi_GetList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ReleaseEventSeriesApi_GetList": {
+            "main": "./lib/actions/ReleaseEventSeriesApi_GetList.js",
+            "title": "Gets a page of event series.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ReleaseEventSeriesApi_GetList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ReleaseEventSeriesApi_Delete": {
+            "main": "./lib/actions/ReleaseEventSeriesApi_Delete.js",
+            "title": "Deletes an event series.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ReleaseEventSeriesApi_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ReleaseEventApi_GetList": {
+            "main": "./lib/actions/ReleaseEventApi_GetList.js",
+            "title": "Gets a page of events.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ReleaseEventApi_GetList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ReleaseEventApi_GetNames": {
+            "main": "./lib/actions/ReleaseEventApi_GetNames.js",
+            "title": "Find event names by a part of name.\r\n            \r\n            Matching is done anywhere from the name.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ReleaseEventApi_GetNames.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ReleaseEventApi_GetAlbums": {
+            "main": "./lib/actions/ReleaseEventApi_GetAlbums.js",
+            "title": "Gets a list of albums for a specific event.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ReleaseEventApi_GetAlbums.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ReleaseEventApi_GetPublishedSongs": {
+            "main": "./lib/actions/ReleaseEventApi_GetPublishedSongs.js",
+            "title": "Gets a list of songs for a specific event.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ReleaseEventApi_GetPublishedSongs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ReleaseEventApi_PostReport": {
+            "main": "./lib/actions/ReleaseEventApi_PostReport.js",
+            "title": "Creates a new report.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ReleaseEventApi_PostReport.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ReleaseEventApi_Delete": {
+            "main": "./lib/actions/ReleaseEventApi_Delete.js",
+            "title": "Deletes an event.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ReleaseEventApi_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ReleaseEventApi_GetOne": {
+            "main": "./lib/actions/ReleaseEventApi_GetOne.js",
+            "title": "ReleaseEventApi_GetOne",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ReleaseEventApi_GetOne.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ResourcesApi_GetList": {
+            "main": "./lib/actions/ResourcesApi_GetList.js",
+            "title": "Gets a number of resource sets for a specific culture.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ResourcesApi_GetList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongListApi_Post": {
+            "main": "./lib/actions/SongListApi_Post.js",
+            "title": "Creates a song list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongListApi_Post.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongListApi_DeleteComment": {
+            "main": "./lib/actions/SongListApi_DeleteComment.js",
+            "title": "Deletes a comment.",
+            "description": "Normal users can delete their own comments, moderators can delete all comments.\r\n            Requires login.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongListApi_DeleteComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongListApi_PostEditComment": {
+            "main": "./lib/actions/SongListApi_PostEditComment.js",
+            "title": "Updates a comment.",
+            "description": "Normal users can edit their own comments, moderators can edit all comments.\r\n            Requires login.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongListApi_PostEditComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongListApi_GetFeaturedLists": {
+            "main": "./lib/actions/SongListApi_GetFeaturedLists.js",
+            "title": "Gets a list of featured song lists.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongListApi_GetFeaturedLists.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongListApi_GetFeaturedListNames": {
+            "main": "./lib/actions/SongListApi_GetFeaturedListNames.js",
+            "title": "Gets a list of featuedd list names. Ideal for autocomplete boxes.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongListApi_GetFeaturedListNames.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongListApi_Delete": {
+            "main": "./lib/actions/SongListApi_Delete.js",
+            "title": "Deletes a song list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongListApi_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongListApi_GetComments": {
+            "main": "./lib/actions/SongListApi_GetComments.js",
+            "title": "Gets a list of comments for a song list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongListApi_GetComments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongListApi_PostNewComment": {
+            "main": "./lib/actions/SongListApi_PostNewComment.js",
+            "title": "Posts a new comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongListApi_PostNewComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongListApi_GetSongs": {
+            "main": "./lib/actions/SongListApi_GetSongs.js",
+            "title": "Gets a list of songs in a song list.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongListApi_GetSongs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongApi_GetList": {
+            "main": "./lib/actions/SongApi_GetList.js",
+            "title": "Find songs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongApi_GetList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongApi_GetByPV": {
+            "main": "./lib/actions/SongApi_GetByPV.js",
+            "title": "Gets a song by PV.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongApi_GetByPV.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongApi_DeleteComment": {
+            "main": "./lib/actions/SongApi_DeleteComment.js",
+            "title": "Deletes a comment.",
+            "description": "Normal users can delete their own comments, moderators can delete all comments.\r\n            Requires login.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongApi_DeleteComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongApi_PostEditComment": {
+            "main": "./lib/actions/SongApi_PostEditComment.js",
+            "title": "Updates a comment.",
+            "description": "Normal users can edit their own comments, moderators can edit all comments.\r\n            Requires login.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongApi_PostEditComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongApi_GetHighlightedSongs": {
+            "main": "./lib/actions/SongApi_GetHighlightedSongs.js",
+            "title": "Gets list of highlighted songs, same as front page.",
+            "description": "Output is cached for 1 hour.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongApi_GetHighlightedSongs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongApi_GetLyrics": {
+            "main": "./lib/actions/SongApi_GetLyrics.js",
+            "title": "Gets lyrics by ID.",
+            "description": "Output is cached. Specify song version as parameter to refresh.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongApi_GetLyrics.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongApi_GetNames": {
+            "main": "./lib/actions/SongApi_GetNames.js",
+            "title": "Gets a list of song names. Ideal for autocomplete boxes.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongApi_GetNames.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongApi_GetTopSongs": {
+            "main": "./lib/actions/SongApi_GetTopSongs.js",
+            "title": "Gets top rated songs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongApi_GetTopSongs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongApi_Delete": {
+            "main": "./lib/actions/SongApi_Delete.js",
+            "title": "Deletes a song.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongApi_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongApi_GetById": {
+            "main": "./lib/actions/SongApi_GetById.js",
+            "title": "Gets a song by Id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongApi_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongApi_GetComments": {
+            "main": "./lib/actions/SongApi_GetComments.js",
+            "title": "Gets a list of comments for a song.",
+            "description": "Pagination and sorting might be added later.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongApi_GetComments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongApi_PostNewComment": {
+            "main": "./lib/actions/SongApi_PostNewComment.js",
+            "title": "Posts a new comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongApi_PostNewComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongApi_GetDerived": {
+            "main": "./lib/actions/SongApi_GetDerived.js",
+            "title": "Gets derived (alternate versions) of a song.",
+            "description": "Pagination and sorting might be added later.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongApi_GetDerived.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongApi_GetRatings": {
+            "main": "./lib/actions/SongApi_GetRatings.js",
+            "title": "Get ratings for a song.",
+            "description": "The result includes ratings and user information.\r\n            For users who have requested not to make their ratings public, the user will be empty.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongApi_GetRatings.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongApi_PostRating": {
+            "main": "./lib/actions/SongApi_PostRating.js",
+            "title": "Add or update rating for a specific song, for the currently logged in user.",
+            "description": "If the user has already rated the song, any previous rating is replaced.\r\n            Authorization cookie must be included.\r\n            This API supports CORS.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongApi_PostRating.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SongApi_GetRelated": {
+            "main": "./lib/actions/SongApi_GetRelated.js",
+            "title": "Gets related songs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SongApi_GetRelated.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TagApi_GetList": {
+            "main": "./lib/actions/TagApi_GetList.js",
+            "title": "Find tags.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TagApi_GetList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TagApi_PostNewTag": {
+            "main": "./lib/actions/TagApi_PostNewTag.js",
+            "title": "Creates a new tag.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TagApi_PostNewTag.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TagApi_GetByName": {
+            "main": "./lib/actions/TagApi_GetByName.js",
+            "title": "DEPRECATED. Gets a tag by name.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TagApi_GetByName.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TagApi_GetCategoryNamesList": {
+            "main": "./lib/actions/TagApi_GetCategoryNamesList.js",
+            "title": "Gets a list of tag category names.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TagApi_GetCategoryNamesList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TagApi_DeleteComment": {
+            "main": "./lib/actions/TagApi_DeleteComment.js",
+            "title": "Deletes a comment.\r\n            Normal users can delete their own comments, moderators can delete all comments.\r\n            Requires login.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TagApi_DeleteComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TagApi_PostEditComment": {
+            "main": "./lib/actions/TagApi_PostEditComment.js",
+            "title": "Updates a comment.\r\n            Normal users can edit their own comments, moderators can edit all comments.\r\n            Requires login.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TagApi_PostEditComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TagApi_GetNames": {
+            "main": "./lib/actions/TagApi_GetNames.js",
+            "title": "Find tag names by a part of name.\r\n            \r\n            Matching is done anywhere from the name.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TagApi_GetNames.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TagApi_GetTopTags": {
+            "main": "./lib/actions/TagApi_GetTopTags.js",
+            "title": "Gets the most common tags in a category.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TagApi_GetTopTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TagApi_Delete": {
+            "main": "./lib/actions/TagApi_Delete.js",
+            "title": "Deletes a tag.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TagApi_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TagApi_GetById": {
+            "main": "./lib/actions/TagApi_GetById.js",
+            "title": "Gets a tag by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TagApi_GetById.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TagApi_GetChildTags": {
+            "main": "./lib/actions/TagApi_GetChildTags.js",
+            "title": "Gets a list of child tags for a tag.\r\n            Only direct children will be included.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TagApi_GetChildTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TagApi_GetComments": {
+            "main": "./lib/actions/TagApi_GetComments.js",
+            "title": "Gets a list of comments for a tag.\r\n            Note: pagination and sorting might be added later.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TagApi_GetComments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TagApi_PostNewComment": {
+            "main": "./lib/actions/TagApi_PostNewComment.js",
+            "title": "Posts a new comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TagApi_PostNewComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "TagApi_PostReport": {
+            "main": "./lib/actions/TagApi_PostReport.js",
+            "title": "Creates a new report.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/TagApi_PostReport.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_GetList": {
+            "main": "./lib/actions/UserApi_GetList.js",
+            "title": "Gets a list of users.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_GetList.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_GetCurrent": {
+            "main": "./lib/actions/UserApi_GetCurrent.js",
+            "title": "Gets information about the currently logged in user.",
+            "description": "Requires login information.\r\n            This API supports CORS, and is restricted to specific origins.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_GetCurrent.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_PostAlbumStatus": {
+            "main": "./lib/actions/UserApi_PostAlbumStatus.js",
+            "title": "Add or update collection status, media type and rating for a specific album, for the currently logged in user.",
+            "description": "If the user has already rated the album, any previous rating is replaced.\r\n            Authorization cookie must be included.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_PostAlbumStatus.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_DeleteFollowedTag": {
+            "main": "./lib/actions/UserApi_DeleteFollowedTag.js",
+            "title": "UserApi_DeleteFollowedTag",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_DeleteFollowedTag.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_PostFollowedTag": {
+            "main": "./lib/actions/UserApi_PostFollowedTag.js",
+            "title": "UserApi_PostFollowedTag",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_PostFollowedTag.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_GetSongRatingForCurrent": {
+            "main": "./lib/actions/UserApi_GetSongRatingForCurrent.js",
+            "title": "Gets currently logged in user's rating for a song.",
+            "description": "Requires authentication.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_GetSongRatingForCurrent.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_PostRefreshEntryEdit": {
+            "main": "./lib/actions/UserApi_PostRefreshEntryEdit.js",
+            "title": "Refresh entry edit status, indicating that the current user is still editing that entry.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_PostRefreshEntryEdit.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_PostSongTags": {
+            "main": "./lib/actions/UserApi_PostSongTags.js",
+            "title": "Appends tags for a song, by the currently logged in user.",
+            "description": "This can only be used to add tags - existing tags will not be removed. \r\n            Nothing will be done for tags that are already applied by the current user for the song.\r\n            Authorization cookie is required.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_PostSongTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_GetMessage": {
+            "main": "./lib/actions/UserApi_GetMessage.js",
+            "title": "Gets a user message.",
+            "description": "The message will be marked as read.\r\n            User can only load messages from their own inbox.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_GetMessage.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_GetNames": {
+            "main": "./lib/actions/UserApi_GetNames.js",
+            "title": "Gets a list of user names. Ideal for autocomplete boxes.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_GetNames.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_DeleteProfileComment": {
+            "main": "./lib/actions/UserApi_DeleteProfileComment.js",
+            "title": "Deletes a comment.",
+            "description": "Normal users can delete their own comments, moderators can delete all comments.\r\n            Requires login.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_DeleteProfileComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_PostEditComment": {
+            "main": "./lib/actions/UserApi_PostEditComment.js",
+            "title": "Updates a comment.",
+            "description": "Normal users can edit their own comments, moderators can edit all comments.\r\n            Requires login.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_PostEditComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_GetOne": {
+            "main": "./lib/actions/UserApi_GetOne.js",
+            "title": "Gets user by ID.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_GetOne.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_GetAlbumCollection": {
+            "main": "./lib/actions/UserApi_GetAlbumCollection.js",
+            "title": "Gets a list of albums in a user's collection.",
+            "description": "This includes albums that have been rated by the user as well as albums that the user has bought or wishlisted.\r\n            Note that the user might have set his album ownership status and media type as private, in which case those properties are not included.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_GetAlbumCollection.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_GetEvents": {
+            "main": "./lib/actions/UserApi_GetEvents.js",
+            "title": "Gets a list of events a user has subscribed to.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_GetEvents.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_GetFollowedArtists": {
+            "main": "./lib/actions/UserApi_GetFollowedArtists.js",
+            "title": "Gets a list of artists followed by a user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_GetFollowedArtists.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_DeleteMessages": {
+            "main": "./lib/actions/UserApi_DeleteMessages.js",
+            "title": "Deletes a list of user messages.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_DeleteMessages.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_GetMessages": {
+            "main": "./lib/actions/UserApi_GetMessages.js",
+            "title": "Gets a list of messages.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_GetMessages.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_PostNewMessage": {
+            "main": "./lib/actions/UserApi_PostNewMessage.js",
+            "title": "Creates a new message.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_PostNewMessage.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_GetProfileComments": {
+            "main": "./lib/actions/UserApi_GetProfileComments.js",
+            "title": "Gets a list of comments posted on user's profile.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_GetProfileComments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_PostNewComment": {
+            "main": "./lib/actions/UserApi_PostNewComment.js",
+            "title": "Posts a new comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_PostNewComment.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_GetRatedSongs": {
+            "main": "./lib/actions/UserApi_GetRatedSongs.js",
+            "title": "Gets a list of songs rated by a user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_GetRatedSongs.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_GetSongRating": {
+            "main": "./lib/actions/UserApi_GetSongRating.js",
+            "title": "Gets a specific user's rating for a song.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_GetSongRating.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_PostSetting": {
+            "main": "./lib/actions/UserApi_PostSetting.js",
+            "title": "Updates user setting.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                },
+                "body_content_type": {
+                    "viewClass": "SelectView",
+                    "label": "Body Content-Type",
+                    "required": true,
+                    "prompt": "Choose a body Content-Type.",
+                    "model": {
+                        "application/json": "application/json",
+                        "text/json": "text/json",
+                        "application/xml": "application/xml",
+                        "text/xml": "text/xml",
+                        "application/x-www-form-urlencoded": "application/x-www-form-urlencoded"
+                    }
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_PostSetting.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UserApi_GetSongLists": {
+            "main": "./lib/actions/UserApi_GetSongLists.js",
+            "title": "Gets a list of song lists for a user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UserApi_GetSongLists.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

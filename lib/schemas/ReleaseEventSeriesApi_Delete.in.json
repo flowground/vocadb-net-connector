@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "notes": {
+            "required": false,
+            "type": "string"
+        },
+        "hardDelete": {
+            "required": false,
+            "type": "boolean"
+        }
+    }
+}

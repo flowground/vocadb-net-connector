@@ -1,0 +1,46 @@
+{
+    "type": "object",
+    "properties": {
+        "folderId": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "start": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "maxResults": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "getTotalCount": {
+            "required": false,
+            "type": "boolean"
+        },
+        "sort": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "Name",
+                "DateCreated",
+                "LastCommentDate"
+            ]
+        },
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "Comments",
+                "CommentCount",
+                "Content",
+                "LastComment",
+                "All"
+            ]
+        }
+    }
+}

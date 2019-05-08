@@ -1,0 +1,43 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "inbox": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Nothing",
+                "Received",
+                "Sent",
+                "Notifications"
+            ]
+        },
+        "unread": {
+            "required": false,
+            "type": "boolean"
+        },
+        "anotherUserId": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "start": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "maxResults": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "getTotalCount": {
+            "required": false,
+            "type": "boolean"
+        }
+    }
+}

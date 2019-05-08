@@ -1,0 +1,103 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "query": {
+            "required": false,
+            "type": "string"
+        },
+        "artistType": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Unknown",
+                "Circle",
+                "Label",
+                "Producer",
+                "Animator",
+                "Illustrator",
+                "Lyricist",
+                "Vocaloid",
+                "UTAU",
+                "CeVIO",
+                "OtherVoiceSynthesizer",
+                "OtherVocalist",
+                "OtherGroup",
+                "OtherIndividual",
+                "Utaite",
+                "Band",
+                "Vocalist",
+                "Character"
+            ]
+        },
+        "start": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "maxResults": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "getTotalCount": {
+            "required": false,
+            "type": "boolean"
+        },
+        "sort": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "Name",
+                "AdditionDate",
+                "AdditionDateAsc",
+                "ReleaseDate",
+                "SongCount",
+                "SongRating",
+                "FollowerCount"
+            ]
+        },
+        "nameMatchMode": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Auto",
+                "Partial",
+                "StartsWith",
+                "Exact",
+                "Words"
+            ]
+        },
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "AdditionalNames",
+                "ArtistLinks",
+                "ArtistLinksReverse",
+                "BaseVoicebank",
+                "Description",
+                "MainPicture",
+                "Names",
+                "Tags",
+                "WebLinks"
+            ]
+        },
+        "lang": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Default",
+                "Japanese",
+                "Romaji",
+                "English"
+            ]
+        }
+    }
+}

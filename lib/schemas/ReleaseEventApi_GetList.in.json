@@ -1,0 +1,142 @@
+{
+    "type": "object",
+    "properties": {
+        "query": {
+            "required": false,
+            "type": "string"
+        },
+        "nameMatchMode": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Auto",
+                "Partial",
+                "StartsWith",
+                "Exact",
+                "Words"
+            ]
+        },
+        "seriesId": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "afterDate": {
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+        },
+        "beforeDate": {
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+        },
+        "category": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Unspecified",
+                "AlbumRelease",
+                "Anniversary",
+                "Club",
+                "Concert",
+                "Contest",
+                "Convention",
+                "Other"
+            ]
+        },
+        "userCollectionId": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "tagId": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "format": "int32",
+                "type": "integer"
+            }
+        },
+        "childTags": {
+            "required": false,
+            "type": "boolean"
+        },
+        "artistId": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "format": "int32",
+                "type": "integer"
+            }
+        },
+        "childVoicebanks": {
+            "required": false,
+            "type": "boolean"
+        },
+        "includeMembers": {
+            "required": false,
+            "type": "boolean"
+        },
+        "status": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Draft",
+                "Finished",
+                "Approved",
+                "Locked"
+            ]
+        },
+        "start": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "maxResults": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "getTotalCount": {
+            "required": false,
+            "type": "boolean"
+        },
+        "sort": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "Name",
+                "Date",
+                "AdditionDate",
+                "SeriesName"
+            ]
+        },
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "AdditionalNames",
+                "Artists",
+                "Description",
+                "MainPicture",
+                "Names",
+                "Series",
+                "SongList",
+                "WebLinks"
+            ]
+        },
+        "lang": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Default",
+                "Japanese",
+                "Romaji",
+                "English"
+            ]
+        }
+    }
+}

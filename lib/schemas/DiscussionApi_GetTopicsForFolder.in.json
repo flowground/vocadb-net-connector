@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "folderId": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "Comments",
+                "CommentCount",
+                "Content",
+                "LastComment",
+                "All"
+            ]
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "type": "object",
+    "properties": {
+        "query": {
+            "required": false,
+            "type": "string"
+        },
+        "nameMatchMode": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Auto",
+                "Partial",
+                "StartsWith",
+                "Exact",
+                "Words"
+            ]
+        },
+        "featuredCategory": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Nothing",
+                "Concerts",
+                "VocaloidRanking",
+                "Pools",
+                "Other"
+            ]
+        },
+        "maxResults": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        }
+    }
+}

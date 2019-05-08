@@ -1,0 +1,72 @@
+{
+    "type": "object",
+    "properties": {
+        "before": {
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+        },
+        "since": {
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+        },
+        "userId": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "editEvent": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Created",
+                "Updated",
+                "Deleted",
+                "Restored"
+            ]
+        },
+        "maxResults": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "getTotalCount": {
+            "required": false,
+            "type": "boolean"
+        },
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "ArchivedVersion",
+                "Entry"
+            ]
+        },
+        "entryFields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "AdditionalNames",
+                "Description",
+                "MainPicture",
+                "Names",
+                "PVs",
+                "Tags",
+                "WebLinks"
+            ]
+        },
+        "lang": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Default",
+                "Japanese",
+                "Romaji",
+                "English"
+            ]
+        }
+    }
+}

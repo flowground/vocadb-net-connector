@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "messageId": {
+            "required": true,
+            "type": "array",
+            "items": {
+                "format": "int32",
+                "type": "integer"
+            }
+        }
+    }
+}

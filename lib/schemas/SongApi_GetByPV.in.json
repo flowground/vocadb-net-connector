@@ -1,0 +1,52 @@
+{
+    "type": "object",
+    "properties": {
+        "pvService": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "NicoNicoDouga",
+                "Youtube",
+                "SoundCloud",
+                "Vimeo",
+                "Piapro",
+                "Bilibili",
+                "File",
+                "LocalFile",
+                "Creofuga"
+            ]
+        },
+        "pvId": {
+            "required": true,
+            "type": "string"
+        },
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "AdditionalNames",
+                "Albums",
+                "Artists",
+                "Lyrics",
+                "MainPicture",
+                "Names",
+                "PVs",
+                "ReleaseEvent",
+                "Tags",
+                "ThumbUrl",
+                "WebLinks"
+            ]
+        },
+        "lang": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Default",
+                "Japanese",
+                "Romaji",
+                "English"
+            ]
+        }
+    }
+}

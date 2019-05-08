@@ -1,0 +1,177 @@
+{
+    "type": "object",
+    "properties": {
+        "query": {
+            "required": false,
+            "type": "string"
+        },
+        "discTypes": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Unknown",
+                "Album",
+                "Single",
+                "EP",
+                "SplitAlbum",
+                "Compilation",
+                "Video",
+                "Artbook",
+                "Game",
+                "Fanmade",
+                "Instrumental",
+                "Other"
+            ]
+        },
+        "tagName": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "tagId": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "format": "int32",
+                "type": "integer"
+            }
+        },
+        "childTags": {
+            "required": false,
+            "type": "boolean"
+        },
+        "artistId": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "format": "int32",
+                "type": "integer"
+            }
+        },
+        "artistParticipationStatus": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Everything",
+                "OnlyMainAlbums",
+                "OnlyCollaborations"
+            ]
+        },
+        "childVoicebanks": {
+            "required": false,
+            "type": "boolean"
+        },
+        "includeMembers": {
+            "required": false,
+            "type": "boolean"
+        },
+        "barcode": {
+            "required": false,
+            "type": "string"
+        },
+        "status": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Draft",
+                "Finished",
+                "Approved",
+                "Locked"
+            ]
+        },
+        "releaseDateAfter": {
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+        },
+        "releaseDateBefore": {
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+        },
+        "advancedFilters": {
+            "required": false,
+            "type": "array",
+            "items": {}
+        },
+        "start": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "maxResults": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "getTotalCount": {
+            "required": false,
+            "type": "boolean"
+        },
+        "sort": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "Name",
+                "ReleaseDate",
+                "ReleaseDateWithNulls",
+                "AdditionDate",
+                "RatingAverage",
+                "RatingTotal",
+                "NameThenReleaseDate",
+                "CollectionCount"
+            ]
+        },
+        "preferAccurateMatches": {
+            "required": false,
+            "type": "boolean"
+        },
+        "deleted": {
+            "required": false,
+            "type": "boolean"
+        },
+        "nameMatchMode": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Auto",
+                "Partial",
+                "StartsWith",
+                "Exact",
+                "Words"
+            ]
+        },
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "AdditionalNames",
+                "Artists",
+                "Description",
+                "Discs",
+                "Identifiers",
+                "MainPicture",
+                "Names",
+                "PVs",
+                "ReleaseEvent",
+                "Tags",
+                "Tracks",
+                "WebLinks"
+            ]
+        },
+        "lang": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Default",
+                "Japanese",
+                "Romaji",
+                "English"
+            ]
+        }
+    }
+}

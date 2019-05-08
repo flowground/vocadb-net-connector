@@ -1,0 +1,181 @@
+{
+    "type": "object",
+    "properties": {
+        "query": {
+            "required": false,
+            "type": "string"
+        },
+        "songTypes": {
+            "required": false,
+            "type": "string"
+        },
+        "tagName": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "tagId": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "format": "int32",
+                "type": "integer"
+            }
+        },
+        "childTags": {
+            "required": false,
+            "type": "boolean"
+        },
+        "artistId": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "format": "int32",
+                "type": "integer"
+            }
+        },
+        "artistParticipationStatus": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Everything",
+                "OnlyMainAlbums",
+                "OnlyCollaborations"
+            ]
+        },
+        "childVoicebanks": {
+            "required": false,
+            "type": "boolean"
+        },
+        "includeMembers": {
+            "required": false,
+            "type": "boolean"
+        },
+        "onlyWithPvs": {
+            "required": false,
+            "type": "boolean"
+        },
+        "pvServices": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Nothing",
+                "NicoNicoDouga",
+                "Youtube",
+                "SoundCloud",
+                "Vimeo",
+                "Piapro",
+                "Bilibili",
+                "File",
+                "LocalFile",
+                "Creofuga"
+            ]
+        },
+        "since": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "minScore": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "userCollectionId": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "releaseEventId": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "status": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Draft",
+                "Finished",
+                "Approved",
+                "Locked"
+            ]
+        },
+        "advancedFilters": {
+            "required": false,
+            "type": "array",
+            "items": {}
+        },
+        "start": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "maxResults": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "getTotalCount": {
+            "required": false,
+            "type": "boolean"
+        },
+        "sort": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "Name",
+                "AdditionDate",
+                "PublishDate",
+                "FavoritedTimes",
+                "RatingScore"
+            ]
+        },
+        "preferAccurateMatches": {
+            "required": false,
+            "type": "boolean"
+        },
+        "nameMatchMode": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Auto",
+                "Partial",
+                "StartsWith",
+                "Exact",
+                "Words"
+            ]
+        },
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "AdditionalNames",
+                "Albums",
+                "Artists",
+                "Lyrics",
+                "MainPicture",
+                "Names",
+                "PVs",
+                "ReleaseEvent",
+                "Tags",
+                "ThumbUrl",
+                "WebLinks"
+            ]
+        },
+        "lang": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "Default",
+                "Japanese",
+                "Romaji",
+                "English"
+            ]
+        }
+    }
+}

@@ -1,0 +1,1358 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "author": {
+                    "properties": {
+                        "email": {
+                            "type": "string"
+                        },
+                        "id": {
+                            "format": "int32",
+                            "type": "integer"
+                        },
+                        "name": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "canEdit": {
+                    "type": "boolean"
+                },
+                "deleted": {
+                    "type": "boolean"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "eventDate": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "featuredCategory": {
+                    "enum": [
+                        "Nothing",
+                        "Concerts",
+                        "VocaloidRanking",
+                        "Pools",
+                        "Other"
+                    ],
+                    "type": "string"
+                },
+                "id": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "songLinks": {
+                    "items": {
+                        "properties": {
+                            "notes": {
+                                "type": "string"
+                            },
+                            "order": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "song": {
+                                "properties": {
+                                    "additionalNames": {
+                                        "type": "string"
+                                    },
+                                    "albums": {
+                                        "items": {
+                                            "properties": {
+                                                "additionalNames": {
+                                                    "type": "string"
+                                                },
+                                                "artistString": {
+                                                    "type": "string"
+                                                },
+                                                "coverPictureMime": {
+                                                    "type": "string"
+                                                },
+                                                "createDate": {
+                                                    "format": "date-time",
+                                                    "type": "string"
+                                                },
+                                                "deleted": {
+                                                    "type": "boolean"
+                                                },
+                                                "discType": {
+                                                    "enum": [
+                                                        "Unknown",
+                                                        "Album",
+                                                        "Single",
+                                                        "EP",
+                                                        "SplitAlbum",
+                                                        "Compilation",
+                                                        "Video",
+                                                        "Artbook",
+                                                        "Game",
+                                                        "Fanmade",
+                                                        "Instrumental",
+                                                        "Other"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "id": {
+                                                    "format": "int32",
+                                                    "type": "integer"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "ratingAverage": {
+                                                    "format": "double",
+                                                    "type": "number"
+                                                },
+                                                "ratingCount": {
+                                                    "format": "int32",
+                                                    "type": "integer"
+                                                },
+                                                "releaseDate": {
+                                                    "properties": {
+                                                        "day": {
+                                                            "format": "int32",
+                                                            "type": "integer"
+                                                        },
+                                                        "formatted": {
+                                                            "type": "string"
+                                                        },
+                                                        "isEmpty": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "month": {
+                                                            "format": "int32",
+                                                            "type": "integer"
+                                                        },
+                                                        "year": {
+                                                            "format": "int32",
+                                                            "type": "integer"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "releaseEvent": {
+                                                    "properties": {
+                                                        "additionalNames": {
+                                                            "type": "string"
+                                                        },
+                                                        "artists": {
+                                                            "items": {
+                                                                "properties": {
+                                                                    "artist": {
+                                                                        "properties": {
+                                                                            "additionalNames": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "artistType": {
+                                                                                "enum": [
+                                                                                    "Unknown",
+                                                                                    "Circle",
+                                                                                    "Label",
+                                                                                    "Producer",
+                                                                                    "Animator",
+                                                                                    "Illustrator",
+                                                                                    "Lyricist",
+                                                                                    "Vocaloid",
+                                                                                    "UTAU",
+                                                                                    "CeVIO",
+                                                                                    "OtherVoiceSynthesizer",
+                                                                                    "OtherVocalist",
+                                                                                    "OtherGroup",
+                                                                                    "OtherIndividual",
+                                                                                    "Utaite",
+                                                                                    "Band",
+                                                                                    "Vocalist",
+                                                                                    "Character"
+                                                                                ],
+                                                                                "type": "string"
+                                                                            },
+                                                                            "deleted": {
+                                                                                "type": "boolean"
+                                                                            },
+                                                                            "id": {
+                                                                                "format": "int32",
+                                                                                "type": "integer"
+                                                                            },
+                                                                            "name": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "pictureMime": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "releaseDate": {
+                                                                                "format": "date-time",
+                                                                                "type": "string"
+                                                                            },
+                                                                            "status": {
+                                                                                "enum": [
+                                                                                    "Draft",
+                                                                                    "Finished",
+                                                                                    "Approved",
+                                                                                    "Locked"
+                                                                                ],
+                                                                                "type": "string"
+                                                                            },
+                                                                            "version": {
+                                                                                "format": "int32",
+                                                                                "type": "integer"
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "effectiveRoles": {
+                                                                        "enum": [
+                                                                            "Default",
+                                                                            "Dancer",
+                                                                            "DJ",
+                                                                            "Instrumentalist",
+                                                                            "Organizer",
+                                                                            "Promoter",
+                                                                            "VJ",
+                                                                            "Vocalist",
+                                                                            "VoiceManipulator",
+                                                                            "OtherPerformer",
+                                                                            "Other"
+                                                                        ],
+                                                                        "type": "string"
+                                                                    },
+                                                                    "id": {
+                                                                        "format": "int32",
+                                                                        "type": "integer"
+                                                                    },
+                                                                    "name": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "roles": {
+                                                                        "enum": [
+                                                                            "Default",
+                                                                            "Dancer",
+                                                                            "DJ",
+                                                                            "Instrumentalist",
+                                                                            "Organizer",
+                                                                            "Promoter",
+                                                                            "VJ",
+                                                                            "Vocalist",
+                                                                            "VoiceManipulator",
+                                                                            "OtherPerformer",
+                                                                            "Other"
+                                                                        ],
+                                                                        "type": "string"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            },
+                                                            "type": "array"
+                                                        },
+                                                        "category": {
+                                                            "enum": [
+                                                                "Unspecified",
+                                                                "AlbumRelease",
+                                                                "Anniversary",
+                                                                "Club",
+                                                                "Concert",
+                                                                "Contest",
+                                                                "Convention",
+                                                                "Other"
+                                                            ],
+                                                            "type": "string"
+                                                        },
+                                                        "date": {
+                                                            "format": "date-time",
+                                                            "type": "string"
+                                                        },
+                                                        "description": {
+                                                            "type": "string"
+                                                        },
+                                                        "endDate": {
+                                                            "format": "date-time",
+                                                            "type": "string"
+                                                        },
+                                                        "id": {
+                                                            "format": "int32",
+                                                            "type": "integer"
+                                                        },
+                                                        "mainPicture": {
+                                                            "properties": {
+                                                                "mime": {
+                                                                    "type": "string"
+                                                                },
+                                                                "urlSmallThumb": {
+                                                                    "type": "string"
+                                                                },
+                                                                "urlThumb": {
+                                                                    "type": "string"
+                                                                },
+                                                                "urlTinyThumb": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "name": {
+                                                            "type": "string"
+                                                        },
+                                                        "names": {
+                                                            "items": {
+                                                                "properties": {
+                                                                    "language": {
+                                                                        "enum": [
+                                                                            "Unspecified",
+                                                                            "Japanese",
+                                                                            "Romaji",
+                                                                            "English"
+                                                                        ],
+                                                                        "type": "string"
+                                                                    },
+                                                                    "value": {
+                                                                        "type": "string"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            },
+                                                            "type": "array"
+                                                        },
+                                                        "series": {
+                                                            "properties": {
+                                                                "additionalNames": {
+                                                                    "type": "string"
+                                                                },
+                                                                "category": {
+                                                                    "enum": [
+                                                                        "Unspecified",
+                                                                        "AlbumRelease",
+                                                                        "Anniversary",
+                                                                        "Club",
+                                                                        "Concert",
+                                                                        "Contest",
+                                                                        "Convention",
+                                                                        "Other"
+                                                                    ],
+                                                                    "type": "string"
+                                                                },
+                                                                "deleted": {
+                                                                    "type": "boolean"
+                                                                },
+                                                                "description": {
+                                                                    "type": "string"
+                                                                },
+                                                                "id": {
+                                                                    "format": "int32",
+                                                                    "type": "integer"
+                                                                },
+                                                                "name": {
+                                                                    "type": "string"
+                                                                },
+                                                                "pictureMime": {
+                                                                    "type": "string"
+                                                                },
+                                                                "status": {
+                                                                    "enum": [
+                                                                        "Draft",
+                                                                        "Finished",
+                                                                        "Approved",
+                                                                        "Locked"
+                                                                    ],
+                                                                    "type": "string"
+                                                                },
+                                                                "urlSlug": {
+                                                                    "type": "string"
+                                                                },
+                                                                "version": {
+                                                                    "format": "int32",
+                                                                    "type": "integer"
+                                                                },
+                                                                "webLinks": {
+                                                                    "items": {
+                                                                        "properties": {
+                                                                            "category": {
+                                                                                "enum": [
+                                                                                    "Official",
+                                                                                    "Commercial",
+                                                                                    "Reference",
+                                                                                    "Other"
+                                                                                ],
+                                                                                "type": "string"
+                                                                            },
+                                                                            "description": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "descriptionOrUrl": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "id": {
+                                                                                "format": "int32",
+                                                                                "type": "integer"
+                                                                            },
+                                                                            "url": {
+                                                                                "type": "string"
+                                                                            }
+                                                                        },
+                                                                        "type": "object"
+                                                                    },
+                                                                    "type": "array"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "seriesId": {
+                                                            "format": "int32",
+                                                            "type": "integer"
+                                                        },
+                                                        "seriesNumber": {
+                                                            "format": "int32",
+                                                            "type": "integer"
+                                                        },
+                                                        "seriesSuffix": {
+                                                            "type": "string"
+                                                        },
+                                                        "songList": {
+                                                            "properties": {
+                                                                "featuredCategory": {
+                                                                    "enum": [
+                                                                        "Nothing",
+                                                                        "Concerts",
+                                                                        "VocaloidRanking",
+                                                                        "Pools",
+                                                                        "Other"
+                                                                    ],
+                                                                    "type": "string"
+                                                                },
+                                                                "id": {
+                                                                    "format": "int32",
+                                                                    "type": "integer"
+                                                                },
+                                                                "name": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "status": {
+                                                            "enum": [
+                                                                "Draft",
+                                                                "Finished",
+                                                                "Approved",
+                                                                "Locked"
+                                                            ],
+                                                            "type": "string"
+                                                        },
+                                                        "urlSlug": {
+                                                            "type": "string"
+                                                        },
+                                                        "venueName": {
+                                                            "type": "string"
+                                                        },
+                                                        "version": {
+                                                            "format": "int32",
+                                                            "type": "integer"
+                                                        },
+                                                        "webLinks": {
+                                                            "items": {
+                                                                "properties": {
+                                                                    "category": {
+                                                                        "enum": [
+                                                                            "Official",
+                                                                            "Commercial",
+                                                                            "Reference",
+                                                                            "Other"
+                                                                        ],
+                                                                        "type": "string"
+                                                                    },
+                                                                    "description": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "id": {
+                                                                        "format": "int32",
+                                                                        "type": "integer"
+                                                                    },
+                                                                    "url": {
+                                                                        "type": "string"
+                                                                    }
+                                                                },
+                                                                "type": "object"
+                                                            },
+                                                            "type": "array"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "status": {
+                                                    "enum": [
+                                                        "Draft",
+                                                        "Finished",
+                                                        "Approved",
+                                                        "Locked"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "version": {
+                                                    "format": "int32",
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "artistString": {
+                                        "type": "string"
+                                    },
+                                    "artists": {
+                                        "items": {
+                                            "properties": {
+                                                "artist": {
+                                                    "properties": {
+                                                        "additionalNames": {
+                                                            "type": "string"
+                                                        },
+                                                        "artistType": {
+                                                            "enum": [
+                                                                "Unknown",
+                                                                "Circle",
+                                                                "Label",
+                                                                "Producer",
+                                                                "Animator",
+                                                                "Illustrator",
+                                                                "Lyricist",
+                                                                "Vocaloid",
+                                                                "UTAU",
+                                                                "CeVIO",
+                                                                "OtherVoiceSynthesizer",
+                                                                "OtherVocalist",
+                                                                "OtherGroup",
+                                                                "OtherIndividual",
+                                                                "Utaite",
+                                                                "Band",
+                                                                "Vocalist",
+                                                                "Character"
+                                                            ],
+                                                            "type": "string"
+                                                        },
+                                                        "deleted": {
+                                                            "type": "boolean"
+                                                        },
+                                                        "id": {
+                                                            "format": "int32",
+                                                            "type": "integer"
+                                                        },
+                                                        "name": {
+                                                            "type": "string"
+                                                        },
+                                                        "pictureMime": {
+                                                            "type": "string"
+                                                        },
+                                                        "releaseDate": {
+                                                            "format": "date-time",
+                                                            "type": "string"
+                                                        },
+                                                        "status": {
+                                                            "enum": [
+                                                                "Draft",
+                                                                "Finished",
+                                                                "Approved",
+                                                                "Locked"
+                                                            ],
+                                                            "type": "string"
+                                                        },
+                                                        "version": {
+                                                            "format": "int32",
+                                                            "type": "integer"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "categories": {
+                                                    "enum": [
+                                                        "Nothing",
+                                                        "Vocalist",
+                                                        "Producer",
+                                                        "Animator",
+                                                        "Label",
+                                                        "Circle",
+                                                        "Other",
+                                                        "Band",
+                                                        "Illustrator",
+                                                        "Subject"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "effectiveRoles": {
+                                                    "enum": [
+                                                        "Default",
+                                                        "Animator",
+                                                        "Arranger",
+                                                        "Composer",
+                                                        "Distributor",
+                                                        "Illustrator",
+                                                        "Instrumentalist",
+                                                        "Lyricist",
+                                                        "Mastering",
+                                                        "Publisher",
+                                                        "Vocalist",
+                                                        "VoiceManipulator",
+                                                        "Other",
+                                                        "Mixer",
+                                                        "Chorus",
+                                                        "Encoder",
+                                                        "VocalDataProvider"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "id": {
+                                                    "format": "int32",
+                                                    "type": "integer"
+                                                },
+                                                "isCustomName": {
+                                                    "type": "boolean"
+                                                },
+                                                "isSupport": {
+                                                    "type": "boolean"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "roles": {
+                                                    "enum": [
+                                                        "Default",
+                                                        "Animator",
+                                                        "Arranger",
+                                                        "Composer",
+                                                        "Distributor",
+                                                        "Illustrator",
+                                                        "Instrumentalist",
+                                                        "Lyricist",
+                                                        "Mastering",
+                                                        "Publisher",
+                                                        "Vocalist",
+                                                        "VoiceManipulator",
+                                                        "Other",
+                                                        "Mixer",
+                                                        "Chorus",
+                                                        "Encoder",
+                                                        "VocalDataProvider"
+                                                    ],
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "createDate": {
+                                        "format": "date-time",
+                                        "type": "string"
+                                    },
+                                    "defaultName": {
+                                        "type": "string"
+                                    },
+                                    "defaultNameLanguage": {
+                                        "enum": [
+                                            "Unspecified",
+                                            "Japanese",
+                                            "Romaji",
+                                            "English"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "deleted": {
+                                        "type": "boolean"
+                                    },
+                                    "favoritedTimes": {
+                                        "format": "int32",
+                                        "type": "integer"
+                                    },
+                                    "id": {
+                                        "format": "int32",
+                                        "type": "integer"
+                                    },
+                                    "lengthSeconds": {
+                                        "format": "int32",
+                                        "type": "integer"
+                                    },
+                                    "lyrics": {
+                                        "items": {
+                                            "properties": {
+                                                "cultureCode": {
+                                                    "type": "string"
+                                                },
+                                                "id": {
+                                                    "format": "int32",
+                                                    "type": "integer"
+                                                },
+                                                "source": {
+                                                    "type": "string"
+                                                },
+                                                "translationType": {
+                                                    "enum": [
+                                                        "Original",
+                                                        "Romanized",
+                                                        "Translation"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "url": {
+                                                    "type": "string"
+                                                },
+                                                "value": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "mainPicture": {
+                                        "properties": {
+                                            "mime": {
+                                                "type": "string"
+                                            },
+                                            "urlSmallThumb": {
+                                                "type": "string"
+                                            },
+                                            "urlThumb": {
+                                                "type": "string"
+                                            },
+                                            "urlTinyThumb": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "mergedTo": {
+                                        "format": "int32",
+                                        "type": "integer"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "names": {
+                                        "items": {
+                                            "properties": {
+                                                "language": {
+                                                    "enum": [
+                                                        "Unspecified",
+                                                        "Japanese",
+                                                        "Romaji",
+                                                        "English"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "value": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "originalVersionId": {
+                                        "format": "int32",
+                                        "type": "integer"
+                                    },
+                                    "publishDate": {
+                                        "format": "date-time",
+                                        "type": "string"
+                                    },
+                                    "pvServices": {
+                                        "enum": [
+                                            "Nothing",
+                                            "NicoNicoDouga",
+                                            "Youtube",
+                                            "SoundCloud",
+                                            "Vimeo",
+                                            "Piapro",
+                                            "Bilibili",
+                                            "File",
+                                            "LocalFile",
+                                            "Creofuga"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "pvs": {
+                                        "items": {
+                                            "properties": {
+                                                "author": {
+                                                    "type": "string"
+                                                },
+                                                "createdBy": {
+                                                    "format": "int32",
+                                                    "type": "integer"
+                                                },
+                                                "disabled": {
+                                                    "type": "boolean"
+                                                },
+                                                "extendedMetadata": {
+                                                    "properties": {
+                                                        "json": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "id": {
+                                                    "format": "int32",
+                                                    "type": "integer"
+                                                },
+                                                "length": {
+                                                    "format": "int32",
+                                                    "type": "integer"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "publishDate": {
+                                                    "format": "date-time",
+                                                    "type": "string"
+                                                },
+                                                "pvId": {
+                                                    "type": "string"
+                                                },
+                                                "pvType": {
+                                                    "enum": [
+                                                        "Original",
+                                                        "Reprint",
+                                                        "Other"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "service": {
+                                                    "enum": [
+                                                        "NicoNicoDouga",
+                                                        "Youtube",
+                                                        "SoundCloud",
+                                                        "Vimeo",
+                                                        "Piapro",
+                                                        "Bilibili",
+                                                        "File",
+                                                        "LocalFile",
+                                                        "Creofuga"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "thumbUrl": {
+                                                    "type": "string"
+                                                },
+                                                "url": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "ratingScore": {
+                                        "format": "int32",
+                                        "type": "integer"
+                                    },
+                                    "releaseEvent": {
+                                        "properties": {
+                                            "additionalNames": {
+                                                "type": "string"
+                                            },
+                                            "artists": {
+                                                "items": {
+                                                    "properties": {
+                                                        "artist": {
+                                                            "properties": {
+                                                                "additionalNames": {
+                                                                    "type": "string"
+                                                                },
+                                                                "artistType": {
+                                                                    "enum": [
+                                                                        "Unknown",
+                                                                        "Circle",
+                                                                        "Label",
+                                                                        "Producer",
+                                                                        "Animator",
+                                                                        "Illustrator",
+                                                                        "Lyricist",
+                                                                        "Vocaloid",
+                                                                        "UTAU",
+                                                                        "CeVIO",
+                                                                        "OtherVoiceSynthesizer",
+                                                                        "OtherVocalist",
+                                                                        "OtherGroup",
+                                                                        "OtherIndividual",
+                                                                        "Utaite",
+                                                                        "Band",
+                                                                        "Vocalist",
+                                                                        "Character"
+                                                                    ],
+                                                                    "type": "string"
+                                                                },
+                                                                "deleted": {
+                                                                    "type": "boolean"
+                                                                },
+                                                                "id": {
+                                                                    "format": "int32",
+                                                                    "type": "integer"
+                                                                },
+                                                                "name": {
+                                                                    "type": "string"
+                                                                },
+                                                                "pictureMime": {
+                                                                    "type": "string"
+                                                                },
+                                                                "releaseDate": {
+                                                                    "format": "date-time",
+                                                                    "type": "string"
+                                                                },
+                                                                "status": {
+                                                                    "enum": [
+                                                                        "Draft",
+                                                                        "Finished",
+                                                                        "Approved",
+                                                                        "Locked"
+                                                                    ],
+                                                                    "type": "string"
+                                                                },
+                                                                "version": {
+                                                                    "format": "int32",
+                                                                    "type": "integer"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "effectiveRoles": {
+                                                            "enum": [
+                                                                "Default",
+                                                                "Dancer",
+                                                                "DJ",
+                                                                "Instrumentalist",
+                                                                "Organizer",
+                                                                "Promoter",
+                                                                "VJ",
+                                                                "Vocalist",
+                                                                "VoiceManipulator",
+                                                                "OtherPerformer",
+                                                                "Other"
+                                                            ],
+                                                            "type": "string"
+                                                        },
+                                                        "id": {
+                                                            "format": "int32",
+                                                            "type": "integer"
+                                                        },
+                                                        "name": {
+                                                            "type": "string"
+                                                        },
+                                                        "roles": {
+                                                            "enum": [
+                                                                "Default",
+                                                                "Dancer",
+                                                                "DJ",
+                                                                "Instrumentalist",
+                                                                "Organizer",
+                                                                "Promoter",
+                                                                "VJ",
+                                                                "Vocalist",
+                                                                "VoiceManipulator",
+                                                                "OtherPerformer",
+                                                                "Other"
+                                                            ],
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "category": {
+                                                "enum": [
+                                                    "Unspecified",
+                                                    "AlbumRelease",
+                                                    "Anniversary",
+                                                    "Club",
+                                                    "Concert",
+                                                    "Contest",
+                                                    "Convention",
+                                                    "Other"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            "date": {
+                                                "format": "date-time",
+                                                "type": "string"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            },
+                                            "endDate": {
+                                                "format": "date-time",
+                                                "type": "string"
+                                            },
+                                            "id": {
+                                                "format": "int32",
+                                                "type": "integer"
+                                            },
+                                            "mainPicture": {
+                                                "properties": {
+                                                    "mime": {
+                                                        "type": "string"
+                                                    },
+                                                    "urlSmallThumb": {
+                                                        "type": "string"
+                                                    },
+                                                    "urlThumb": {
+                                                        "type": "string"
+                                                    },
+                                                    "urlTinyThumb": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "names": {
+                                                "items": {
+                                                    "properties": {
+                                                        "language": {
+                                                            "enum": [
+                                                                "Unspecified",
+                                                                "Japanese",
+                                                                "Romaji",
+                                                                "English"
+                                                            ],
+                                                            "type": "string"
+                                                        },
+                                                        "value": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "series": {
+                                                "properties": {
+                                                    "additionalNames": {
+                                                        "type": "string"
+                                                    },
+                                                    "category": {
+                                                        "enum": [
+                                                            "Unspecified",
+                                                            "AlbumRelease",
+                                                            "Anniversary",
+                                                            "Club",
+                                                            "Concert",
+                                                            "Contest",
+                                                            "Convention",
+                                                            "Other"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "deleted": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "description": {
+                                                        "type": "string"
+                                                    },
+                                                    "id": {
+                                                        "format": "int32",
+                                                        "type": "integer"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "pictureMime": {
+                                                        "type": "string"
+                                                    },
+                                                    "status": {
+                                                        "enum": [
+                                                            "Draft",
+                                                            "Finished",
+                                                            "Approved",
+                                                            "Locked"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "urlSlug": {
+                                                        "type": "string"
+                                                    },
+                                                    "version": {
+                                                        "format": "int32",
+                                                        "type": "integer"
+                                                    },
+                                                    "webLinks": {
+                                                        "items": {
+                                                            "properties": {
+                                                                "category": {
+                                                                    "enum": [
+                                                                        "Official",
+                                                                        "Commercial",
+                                                                        "Reference",
+                                                                        "Other"
+                                                                    ],
+                                                                    "type": "string"
+                                                                },
+                                                                "description": {
+                                                                    "type": "string"
+                                                                },
+                                                                "descriptionOrUrl": {
+                                                                    "type": "string"
+                                                                },
+                                                                "id": {
+                                                                    "format": "int32",
+                                                                    "type": "integer"
+                                                                },
+                                                                "url": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        },
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "seriesId": {
+                                                "format": "int32",
+                                                "type": "integer"
+                                            },
+                                            "seriesNumber": {
+                                                "format": "int32",
+                                                "type": "integer"
+                                            },
+                                            "seriesSuffix": {
+                                                "type": "string"
+                                            },
+                                            "songList": {
+                                                "properties": {
+                                                    "featuredCategory": {
+                                                        "enum": [
+                                                            "Nothing",
+                                                            "Concerts",
+                                                            "VocaloidRanking",
+                                                            "Pools",
+                                                            "Other"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "id": {
+                                                        "format": "int32",
+                                                        "type": "integer"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "status": {
+                                                "enum": [
+                                                    "Draft",
+                                                    "Finished",
+                                                    "Approved",
+                                                    "Locked"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            "urlSlug": {
+                                                "type": "string"
+                                            },
+                                            "venueName": {
+                                                "type": "string"
+                                            },
+                                            "version": {
+                                                "format": "int32",
+                                                "type": "integer"
+                                            },
+                                            "webLinks": {
+                                                "items": {
+                                                    "properties": {
+                                                        "category": {
+                                                            "enum": [
+                                                                "Official",
+                                                                "Commercial",
+                                                                "Reference",
+                                                                "Other"
+                                                            ],
+                                                            "type": "string"
+                                                        },
+                                                        "description": {
+                                                            "type": "string"
+                                                        },
+                                                        "id": {
+                                                            "format": "int32",
+                                                            "type": "integer"
+                                                        },
+                                                        "url": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "type": "array"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "songType": {
+                                        "enum": [
+                                            "Unspecified",
+                                            "Original",
+                                            "Remaster",
+                                            "Remix",
+                                            "Cover",
+                                            "Arrangement",
+                                            "Instrumental",
+                                            "Mashup",
+                                            "MusicPV",
+                                            "DramaPV",
+                                            "Live",
+                                            "Illustration",
+                                            "Other"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "status": {
+                                        "enum": [
+                                            "Draft",
+                                            "Finished",
+                                            "Approved",
+                                            "Locked"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "tags": {
+                                        "items": {
+                                            "properties": {
+                                                "count": {
+                                                    "format": "int32",
+                                                    "type": "integer"
+                                                },
+                                                "tag": {
+                                                    "properties": {
+                                                        "additionalNames": {
+                                                            "type": "string"
+                                                        },
+                                                        "categoryName": {
+                                                            "type": "string"
+                                                        },
+                                                        "id": {
+                                                            "format": "int32",
+                                                            "type": "integer"
+                                                        },
+                                                        "name": {
+                                                            "type": "string"
+                                                        },
+                                                        "urlSlug": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    },
+                                    "thumbUrl": {
+                                        "type": "string"
+                                    },
+                                    "version": {
+                                        "format": "int32",
+                                        "type": "integer"
+                                    },
+                                    "webLinks": {
+                                        "items": {
+                                            "properties": {
+                                                "category": {
+                                                    "enum": [
+                                                        "Official",
+                                                        "Commercial",
+                                                        "Reference",
+                                                        "Other"
+                                                    ],
+                                                    "type": "string"
+                                                },
+                                                "description": {
+                                                    "type": "string"
+                                                },
+                                                "id": {
+                                                    "format": "int32",
+                                                    "type": "integer"
+                                                },
+                                                "url": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "songInListId": {
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "status": {
+                    "enum": [
+                        "Draft",
+                        "Finished",
+                        "Approved",
+                        "Locked"
+                    ],
+                    "type": "string"
+                },
+                "thumb": {
+                    "properties": {
+                        "entryType": {
+                            "enum": [
+                                "Undefined",
+                                "Album",
+                                "Artist",
+                                "DiscussionTopic",
+                                "PV",
+                                "ReleaseEvent",
+                                "ReleaseEventSeries",
+                                "Song",
+                                "SongList",
+                                "Tag",
+                                "User"
+                            ],
+                            "type": "string"
+                        },
+                        "id": {
+                            "format": "int32",
+                            "type": "integer"
+                        },
+                        "mime": {
+                            "type": "string"
+                        },
+                        "version": {
+                            "format": "int32",
+                            "type": "integer"
+                        }
+                    },
+                    "type": "object"
+                },
+                "updateNotes": {
+                    "type": "string"
+                },
+                "version": {
+                    "format": "int32",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

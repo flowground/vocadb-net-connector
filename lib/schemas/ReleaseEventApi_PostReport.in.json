@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "properties": {
+        "eventId": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "reportType": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "InvalidInfo",
+                "Duplicate",
+                "Inappropriate",
+                "Other"
+            ]
+        },
+        "notes": {
+            "required": true,
+            "type": "string"
+        },
+        "versionNumber": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        }
+    }
+}

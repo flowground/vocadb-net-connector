@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "properties": {
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "KnownLanguages",
+                "MainPicture",
+                "OldUsernames"
+            ]
+        }
+    }
+}

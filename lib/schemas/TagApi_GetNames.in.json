@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "properties": {
+        "query": {
+            "required": false,
+            "type": "string"
+        },
+        "allowAliases": {
+            "required": false,
+            "type": "boolean"
+        },
+        "maxResults": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "settingName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "type": "object",
+    "properties": {
+        "topicId": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        }
+    }
+}

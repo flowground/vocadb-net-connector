@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "fields": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "None",
+                "LastTopic",
+                "TopicCount"
+            ]
+        }
+    }
+}

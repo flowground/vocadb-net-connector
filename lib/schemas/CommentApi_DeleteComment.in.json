@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "entryType": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "Undefined",
+                "Album",
+                "Artist",
+                "DiscussionTopic",
+                "PV",
+                "ReleaseEvent",
+                "ReleaseEventSeries",
+                "Song",
+                "SongList",
+                "Tag",
+                "User"
+            ]
+        },
+        "commentId": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        }
+    }
+}
